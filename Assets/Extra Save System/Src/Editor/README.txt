@@ -1,0 +1,1 @@
+There is the source code of Editor scripts of ExtraSaveSystem. It`s simple, so you can know, as Editor script of generating IDs works.
