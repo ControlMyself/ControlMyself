@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class C_Stat : MonoBehaviour
+public class C_Stat : IngameComp
 {
     private int hp;
     [SerializeField]

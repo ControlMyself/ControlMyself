@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class C_Push : MonoBehaviour
-{
-    private Rigidbody MyRigidBody;
-    
+public class C_Push : IngameComp
+{    
     //C_Push
     public void SetGravity (bool _on)
     {
@@ -34,19 +32,21 @@ public class C_Push : MonoBehaviour
         }
     }
 
-    void OnEnable ()
+    new public void SetOn(bool state)
     {
-        MyRigidBody.isKinematic = false;
+        On = state;
+        MyRigidBody.isKinematic = !On;
     }
-    void OnDisable ()
+    new public void SwapOn()
     {
-        MyRigidBody.isKinematic = true;
+        On = !On;
+        MyRigidBody.isKinematic = !On;
     }
     void OnTriggerExit(Collider _coll)
     {
         if (_coll.CompareTag("GameController"))
         {
-            MyRigidBody.useGravity = false;
+            SetGravity(false);
             gameObject.SetActive(false);
         }
     }

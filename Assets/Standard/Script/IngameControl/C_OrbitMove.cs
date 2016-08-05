@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 
 
-public class C_OrbitMove : MonoBehaviour
+public class C_OrbitMove : IngameComp
 {
-    public bool On = false;
-    private Rigidbody MyRigidBody;
     public enum ORBIT_Mode { CIRCLE, REPEAT, PENDULUM, ONEWAY};
     public ORBIT_Mode Orbit_ModeCurrent;
     public enum MOVE_Mode { AUTO, REMOTE, STEP };
@@ -27,10 +25,6 @@ public class C_OrbitMove : MonoBehaviour
     }
 
     //C_OrbitMove
-    public void SetOn (bool _on)
-    {
-        On = _on;
-    }
     public void SetReverse (bool _rev)
     {
         Reverse = _rev;
@@ -64,11 +58,11 @@ public class C_OrbitMove : MonoBehaviour
         {
             if (OrbitPoint[OrbitProgressive].pointEvent != null)
             {
-                OrbitPoint[OrbitProgressive].pointEvent.Event.Invoke();
+                OrbitPoint[OrbitProgressive].pointEvent.Excute();
             }
             if (Move_ModeCurrent == MOVE_Mode.STEP)
             {
-                On = false;
+                SetOn(false);
             }
             if (OrbitProgressive == 0 && Reverse)
             {
@@ -84,7 +78,7 @@ public class C_OrbitMove : MonoBehaviour
                         Reverse = !Reverse;
                         break;
                     case ORBIT_Mode.ONEWAY:
-                        On = false;
+                        SetOn(false);
                         break;
                 }
             }
@@ -102,7 +96,7 @@ public class C_OrbitMove : MonoBehaviour
                         Reverse = !Reverse;
                         break;
                     case ORBIT_Mode.ONEWAY:
-                        On = false;
+                        SetOn(false);
                         break;
                 }
             }

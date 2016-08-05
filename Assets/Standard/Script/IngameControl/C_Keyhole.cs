@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class C_Keyhole : MonoBehaviour
+public class C_Keyhole : IngameComp
 {
     public enum KEYMODE { HOLDING, SWITCHING, ONCE };
     public KEYMODE CurrentKEYMODE;
@@ -9,16 +9,13 @@ public class C_Keyhole : MonoBehaviour
     public List<C_Command> Commands_Start = new List<C_Command>();
     public List<C_Command> Commands_End = new List<C_Command>();
     public List<GameObject> Key = new List<GameObject>();
-    [HideInInspector]
-    public bool On;
-    private Collider MyCollider;
 
     //C_Keyhole
     void KeyStart ()
     {
         foreach(C_Command item in Commands_Start)
         {
-            item.Event.Invoke();
+            item.Excute();
         }
     }
 
@@ -26,7 +23,7 @@ public class C_Keyhole : MonoBehaviour
     {
         foreach (C_Command item in Commands_Stay)
         {
-            item.Event.Invoke();
+            item.Excute();
         }
     }
 
@@ -34,12 +31,13 @@ public class C_Keyhole : MonoBehaviour
     {
         foreach (C_Command item in Commands_End)
         {
-            item.Event.Invoke();
+            item.Excute();
         }
     }
 
     bool CheckKeyMatching (GameObject a)
     {
+        if (!GetOn()) return false;
         bool _match = false;
         foreach (GameObject item in Key)
         {
@@ -55,7 +53,7 @@ public class C_Keyhole : MonoBehaviour
     //MonoBehaviour
     void FixedUpdate ()
     {
-        if (On)
+        if (GetOn())
         {
             KeyStay();
         }
@@ -68,19 +66,19 @@ public class C_Keyhole : MonoBehaviour
             switch (CurrentKEYMODE)
             {
                 case KEYMODE.ONCE:
-                    if (!On)
+                    if (!GetOn())
                     {
-                        On = true;
+                        SetOn(true);
                         KeyStart();
                     }
                     break;
                 case KEYMODE.HOLDING:
-                    On = true;
+                    SetOn(true);
                     KeyStart();
                     break;
                 case KEYMODE.SWITCHING:
-                    On = !On;
-                    if (On) KeyStart();
+                    SwapOn();
+                    if (GetOn()) KeyStart();
                     else KeyEnd();
                     break;
             }
@@ -93,7 +91,7 @@ public class C_Keyhole : MonoBehaviour
         {
             if (CurrentKEYMODE == KEYMODE.HOLDING)
             {
-                On = false;
+                SetOn(false);
                 KeyEnd();
             }
         }

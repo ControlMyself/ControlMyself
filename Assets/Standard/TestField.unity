@@ -155,6 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef137feb9290fb40822ba508f0dd9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 0
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Speed: 3
   JumpPower: 4
   SlopeLimit: 45
@@ -698,6 +701,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Orbit_ModeCurrent: 2
   Move_ModeCurrent: 0
   OrbitPoint:
@@ -722,6 +727,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d9ac5faa31ec1468d14c5cced0e551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Event:
     m_PersistentCalls:
       m_Calls:
@@ -750,10 +758,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069f53867ba758146a60721c1624facb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 0
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   MyCommand:
   - {fileID: 578670444}
-  Mycollider: {fileID: 0}
-  MyRigidbody: {fileID: 0}
 --- !u!54 &578670446
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1357,6 +1366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   On: 0
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Orbit_ModeCurrent: 3
   Move_ModeCurrent: 2
   OrbitPoint:
@@ -1967,7 +1978,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1289100916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: -0, z: 0}
+  m_LocalPosition: {x: 8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 5, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -2187,6 +2198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef271cb1b7ef3640b461b505c558e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 0
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Focus: {fileID: 62256598}
   LimitMax: {x: 20, y: 20}
   LimitMin: {x: -20, y: -20}
@@ -2225,6 +2239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d9ac5faa31ec1468d14c5cced0e551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Event:
     m_PersistentCalls:
       m_Calls:
@@ -2264,6 +2281,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f18029837563f4da414d5306983813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 0
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   CurrentKEYMODE: 0
   Commands_Stay: []
   Commands_Start:
@@ -2273,7 +2293,6 @@ MonoBehaviour:
   Key:
   - {fileID: 62256590}
   - {fileID: 1893560434}
-  On: 0
 --- !u!4 &1448699916
 Transform:
   m_ObjectHideFlags: 0
@@ -2349,6 +2368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d9ac5faa31ec1468d14c5cced0e551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Event:
     m_PersistentCalls:
       m_Calls:
@@ -2592,6 +2614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d9ac5faa31ec1468d14c5cced0e551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Event:
     m_PersistentCalls:
       m_Calls:
@@ -2620,10 +2645,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069f53867ba758146a60721c1624facb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 0
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   MyCommand:
   - {fileID: 1512006883}
-  Mycollider: {fileID: 0}
-  MyRigidbody: {fileID: 0}
 --- !u!54 &1512006885
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3089,6 +3115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d9ac5faa31ec1468d14c5cced0e551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Event:
     m_PersistentCalls:
       m_Calls:
@@ -3117,10 +3146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069f53867ba758146a60721c1624facb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   MyCommand:
   - {fileID: 1748171775}
-  Mycollider: {fileID: 0}
-  MyRigidbody: {fileID: 0}
 --- !u!54 &1748171777
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3690,6 +3720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b7100aab4aa2846bd09ca3423418dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 0
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
 --- !u!54 &1893560437
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3943,6 +3976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d9ac5faa31ec1468d14c5cced0e551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Event:
     m_PersistentCalls:
       m_Calls:
@@ -3971,10 +4007,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069f53867ba758146a60721c1624facb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 0
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   MyCommand:
   - {fileID: 2008292203}
-  Mycollider: {fileID: 0}
-  MyRigidbody: {fileID: 0}
 --- !u!54 &2008292205
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4370,7 +4407,7 @@ GameObject:
   m_Layer: 0
   m_Name: TestVisible
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4405,6 +4442,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d9ac5faa31ec1468d14c5cced0e551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Event:
     m_PersistentCalls:
       m_Calls:
@@ -4498,6 +4538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d9ac5faa31ec1468d14c5cced0e551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
   Event:
     m_PersistentCalls:
       m_Calls:
@@ -4591,8 +4634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4076f83519c9d1943ba714076e07987c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentTimer_Mode: 0
   On: 1
+  MyCollider: {fileID: 0}
+  MyRigidBody: {fileID: 0}
+  CurrentTimer_Mode: 0
   Time: 0
   TimeTick: 2
   TimeSheet:

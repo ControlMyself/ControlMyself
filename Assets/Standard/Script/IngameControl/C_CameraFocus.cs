@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class C_CameraFocus : MonoBehaviour
+public class C_CameraFocus : IngameComp
 {
     public Transform Focus;
     public Vector2 LimitMax;

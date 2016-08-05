@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class C_PlayerCtrl : MonoBehaviour
+public class C_PlayerCtrl : IngameComp
 {
 
     private C_GameManager Sys;
-    private Collider MyCollider;
-    private Rigidbody MyRigidBody;
     public float Speed = 1f;
     public float JumpPower = 3f;
     [SerializeField]

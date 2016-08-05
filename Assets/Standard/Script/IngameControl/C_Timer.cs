@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 
-public class C_Timer : MonoBehaviour
+public class C_Timer : IngameComp
 {
     public enum Timer_Mode { REPEAT, ONCE };
     public Timer_Mode CurrentTimer_Mode = Timer_Mode.ONCE;
-    [SerializeField]
-    private bool On= false;
     [SerializeField]
     private int Time = 0;
     [SerializeField]
     private float TimeTick = 1f;
     [SerializeField]
-    private Node[] TimeSheet;
+    private List<Node> TimeSheet = new List<Node>();
     [SerializeField]
     private Coroutine MyCoroutine;
 
@@ -33,10 +32,11 @@ public class C_Timer : MonoBehaviour
     {
         TimeTick = _a;
     }
+
     void NodeCheck(int _t)
     {
         int a;
-        for (a = 0; a<TimeSheet.Length; a++)
+        for (a = 0; a<TimeSheet.Count; a++)
         {
             int _ct = TimeSheet[a].Time;
             if (_ct == _t)
@@ -47,23 +47,24 @@ public class C_Timer : MonoBehaviour
                 break;
             }
         }
-        if (a == TimeSheet.Length - 1 && CurrentTimer_Mode == Timer_Mode.REPEAT)
+        if (a == TimeSheet.Count - 1 && CurrentTimer_Mode == Timer_Mode.REPEAT)
             Time = 0;
     }
+
     void StartTimer ()
     {
-        On = true;
-        MyCoroutine = StartCoroutine(TimerCoroutine());
+        if (GetOn())
+            MyCoroutine = StartCoroutine(TimerCoroutine());
     }
     void StopTimer ()
     {
-        On = false;
+        SetOn(false);
         StopCoroutine(MyCoroutine);
     }
     //MonoBehaviour
     void Start ()
     {
-        if (On) MyCoroutine = StartCoroutine(TimerCoroutine());
+        StartTimer();
     }
     IEnumerator TimerCoroutine()
     {
