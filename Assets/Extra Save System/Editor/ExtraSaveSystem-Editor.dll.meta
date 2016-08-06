@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: a69cf48fdf9f6664b8f277539bf577a4
+labels:
+- ExtraSaveSystem
+- ExtraSoft
+timeCreated: 1462987413
+licenseType: Store
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  platformData:
+    Any:
+      enabled: 0
+      settings: {}
+    Editor:
+      enabled: 1
+      settings:
+        DefaultValueInitialized: true
+    WindowsStoreApps:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
