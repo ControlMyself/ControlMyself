@@ -1,30 +1,55 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class C_LobbyCameraArray : MonoBehaviour
-    {
+{
     [SerializeField]
     private Camera CameraUsed;
-    public Transform[] CameraPositionAdress;
-    private int CameraPositionAdressIndex;
+    public Transform[] CameraPositionGoal;
+    public int CameraPositionIndex;
 
-    public int CameraPosition()
+    private Quaternion LastRotation;
+    private Vector3 LastPosition;
+    private float Clamp;
+
+    public void SetCameraArray(int _array)
     {
-        return CameraPositionAdressIndex;
+        CameraPositionIndex = _array;
+        LastRotation = CameraUsed.transform.rotation;
+        LastPosition = CameraUsed.transform.position;
+        Clamp = 0;
     }
-    public void CameraPosition(int _index)
+    public void SetCameraArray(bool _IsAdd)
     {
-        CameraPositionAdressIndex = _index;
-        CameraUsed.transform.position = Vector3.MoveTowards(CameraUsed.transform.position , CameraPositionAdress[_index].position , 1);
-        CameraUsed.transform.rotation = Quaternion.RotateTowards(CameraUsed.transform.rotation, CameraPositionAdress[_index].rotation, 1);
+        if (_IsAdd)
+        {
+            CameraPositionIndex++;
+        }
+        else CameraPositionIndex--;
+
+        if (CameraPositionIndex < 0)
+        {
+            CameraPositionIndex = CameraPositionGoal.Length - 1;
+        }
+        else if (CameraPositionIndex >= CameraPositionGoal.Length)
+        {
+            CameraPositionIndex = 0;
+        }
+        LastRotation = CameraUsed.transform.rotation;
+        LastPosition = CameraUsed.transform.position;
+        Clamp = 0;
     }
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    void Awake ()
+    {
+        LastPosition = CameraUsed.transform.position;
+        LastRotation = CameraUsed.transform.rotation;
+        Clamp = 1;
+    }
+    void FixedUpdate ()
+    {
+        if (Clamp < 1) Clamp += 0.01f;
+        CameraUsed.transform.position = Vector3.Slerp(LastPosition, CameraPositionGoal[CameraPositionIndex].position, Clamp);
+        CameraUsed.transform.rotation = Quaternion.Slerp(LastRotation, CameraPositionGoal[CameraPositionIndex].rotation, Clamp);
+    }
 }
